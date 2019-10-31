@@ -1,6 +1,6 @@
 bootstrapPage(
   
-  selectInput(inputId = "temp_horas",
+  selectInput(inputId = "temp",
               label = "temp",
               choices = c(500, 900, 1300, 1700, 2100),
               selected = 500),
