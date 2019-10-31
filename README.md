@@ -11,6 +11,6 @@
 ## - El archivo .rmd fue exportado vía HTML
 
 # Colaboradores
-## Víctor López
-## Silvia Ramírez
-## Juanjo Fdez-Teijeiro
+## - Víctor López
+## - Silvia Ramírez
+## - Juanjo Fdez-Teijeiro
