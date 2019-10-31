@@ -1,5 +1,3 @@
-n_beaver1 <- beaver1[beaver1$time > 500, ]
-
 bootstrapPage(
   
   selectInput(inputId = "seleccion_horas",
