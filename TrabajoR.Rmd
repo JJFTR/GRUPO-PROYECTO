@@ -1,0 +1,85 @@
+---
+title: "Castor Canadensis"
+author: "Silvia R"
+date: "29/10/2019"
+output: 
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    theme: united
+    highlight: tango
+
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# INTRODUCCION
+
+## Sobre Castor Canadensis
+
+Es una especie de roedor castorimorfo de la familia _Castoridae_. Su habitat natural es en zonas próximas a lagos, lagunas y arroyos con acceso a recursos de construcción y alimento. El territorio donde se encuentra este roedor se extiende en Norteamérica, desde los bosques de Alaska y Canadá hasta el norte de México; además ha sido introducido en la Isla Grande de Tierra del Fuego, (Argentina, Chile), Finlandia y Rusia.
+
+
+![mapa](mapcastor.png)
+
+## Sobre la base de datos
+
+Se va a hacer un análisis del conjunto de datos de R _*Beavers1*_ y _*Beavers2*_
+
+Cada conjunto de datos, compila la temperatura del cuerpo de dos castores hembras, cada 10 minutos por un período menor a un día
+
+La composición de cada tabla es la siguiente:
+```{r beaver1}
+summary(beaver1)
+nrow(beaver1)
+```
+```{r beaver2}
+summary(beaver2)
+nrow(beaver2)
+```
+
+# ANALISIS DE DATOS
+
+# Entender y preparar los datos
+
+Considerando que cada base de dato contiene información para dos castores, se unió las bases de datos y crear una nueva variable, categorica, para identificar de que grupo de datos viene cada línea.
+
+```{r unir tablas, echo=FALSE, warning=FALSE}
+beaver <- rbind(beaver1, beaver2)
+x <- c("first", "second")
+origen <- rep(x, c(100, 114))
+beaver <- cbind(beaver, origen)
+summary(beaver$origen, beaver$time)
+```
+
+La variable **temp** esta en grados Celsius, estadarizada con la formúla:
+
+
+\usepackage{gensymb}
+
+
+
+$$ fahrenheit = celsius \times \frac{9}{5} + 32 $$
+
+## Gráficos
+
+La siguiente tabla muestra la temperatura de los castores a traves del día. 
+
+
+n_beaver1 <- beaver1[beaver1$time > 500, ]
+
+```{r grap1, echo = FALSE}
+n_beaver1 <- beaver1[beaver1$time > 500, ]
+# hay un corte en la secuencia de los datos, entonces solo se usaron a partir de las 500h
+plot(n_beaver1$time, n_beaver1$temp, type = "l", main = "Temp castores", xlab = "Hora", ylab = "Temp en C")
+```
+
+
+
+
+
