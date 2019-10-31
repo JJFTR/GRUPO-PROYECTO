@@ -2,7 +2,7 @@
 El proyecto consiste en analizar las temperaturas corporales de los castores "Castor Canadensis" hembra en grados Celsius según los datos contenidos en "beaver1"
 
 ## Prerequisitos  e instalación
-Para su funcionamiento se requiere cargar el paquete de shiny (install.packages(shiny)), creando los correspondientes ficheros: server.r y ui.r
+Para su funcionamiento se requiere cargar el paquete de shiny (install.packages(shiny)), creando los correspondientes ficheros: server.R y ui.R
 
 ## Construido con:
 - RStudio
